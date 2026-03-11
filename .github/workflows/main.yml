@@ -19,7 +19,7 @@ jobs:
       - name: Install ClawHub
         run: npm install -g clawhub
 
-      - name: Install verified identity skill
+      - name: Install verified-agent-identity
         run: clawhub install verified-agent-identity --force
 
       - name: Install dependencies
@@ -31,4 +31,5 @@ jobs:
         run: node scripts/createNewEthereumIdentity.js
 
       - name: Link Human to Agent
-        run: node scripts/manualLinkHumanToAgent.js --challenge '{"name": "fatthur", "description": "fatthur AI Agent"}'
+        run: |
+          node scripts/manualLinkHumanToAgent.js --challenge "{\"name\":\"fatthur\",\"description\":\"fatthur AI Agent\"}"
